@@ -1,8 +1,11 @@
 """Module manipulant des fichiers texte."""
-
+from filecmp import *
 def diff(file_first, file_second):
     """Fonction retournant True si deux fichiers sont différents."""
-    return True
+    with open(file_first) as file1_id:
+		with open(file_second) as file2_id:
+			resultat=file1_id.read()!=file2_id.read()
+    return resultat
 
 def same(file_first, file_second):
     """Fonction retournant True si deux fichiers sont identiques."""
